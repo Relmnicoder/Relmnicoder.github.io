@@ -9,6 +9,15 @@
     <script src="main.js"></script>
 </head>
 <body>
-<h1>Hello my boi</h1>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <script>
+        $.ajax("info.txt").done (function (data) {
+            $("p").html(data);
+        }).fail(function () {
+            alert("could not get data");
+          })
+        
+    </script>
 </body>
 </html>
