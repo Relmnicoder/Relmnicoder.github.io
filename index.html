@@ -11,12 +11,18 @@
 <body>
     <div class="circle"></div>
     <div class="circle"></div>
+    <div>
+        <p>
+
+        </p>
+    </div>
     <script>
-        $.ajax("info.txt").done (function (data) {
+        $.ajax("info.txt").done(function(data) {
             $("p").html(data);
-        }).fail(function () {
+        })
+        .fail(function() {
             alert("could not get data");
-          })
+          });
         
     </script>
 </body>
