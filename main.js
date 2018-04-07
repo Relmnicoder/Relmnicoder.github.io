@@ -1,25 +1,20 @@
-$.ajax("info.txt").done(function(data) {
-    $("p").html(data);
-})
-.fail(function() {
-    alert("could not get data");
-  });
+$(".toggleBtns").hover(function () {
+    $(this).addClass("highlightedBtn");
+}, function () {
+    $(this).removeClass("highlightedBtn");
+  });   
+$(".toggleBtns").click(function() {
+    $(this).toggleClass("active");
+    $(this).removeClass("highlightedBtn");
+    var panelId = $(this).attr("id") + "Panel";
+    $("#" + panelId).toggleClass("hidden");
+    var numberOfActivePanels = 4 - $('.hidden').length;
+    $(".panel").width(($(window).width() / numberOfActivePanels) - 10);
+});
+$(".panel").height($(window).height() - $("#header").height());
+$(".panel").width(($(window).width() / 2) - 10);
+$("iframe").contents().find("html").html($("#htmlPanel").val());
 
-function isEmail(email) {
-   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-   return regex.test(email);
-}; 
-
-$("#submit").click(function() {
-    var errorMessage = "";
-    if (isEmail($("#email").val()) == false) {
-        errorMessage += "<p>Your email address is not valid </p>"
-    }
-    if ($.isNumeric($("#tel").val()) == false) {
-        errorMessage += "<p>Your Telefon Number is not valid </p>"
-    }
-    if ($("#pass").val() != $("#pass2").val()) {
-        errorMessage += "<p>Your passwords do not match </p>"
-    }
-    $("#wrapper").append(errorMessage);
-  });  
+$("textarea").on('change keyup pase', function(){
+    $("iframe").contents().find("html").html($("#htmlPanel").val());
+});
