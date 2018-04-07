@@ -11,9 +11,15 @@ function isEmail(email) {
 } 
 
 $("#submit").click(function() {
-    alert(isEmail($("#email").val()));
-  });  
-
-  $("#btn").click(function() {
-    alert("oh wee");
+    var errorMessage = "";
+    if (isEmail($("#email").val()) == false) {
+        errorMessage += "<p>Your email address is not valid </p>"
+    }
+    if ($.isNumeric($("#tel").val()) == false) {
+        errorMessage += "<p>Your Telefon Number is not valid </p>"
+    }
+    if ($("#pass").val() != $("#pass2").val()) {
+        errorMessage += "<p>Your passwords do not match </p>"
+    }
+    alert(errorMessage);
   });  
