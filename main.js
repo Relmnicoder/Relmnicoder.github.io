@@ -21,5 +21,5 @@ $("#submit").click(function() {
     if ($("#pass").val() != $("#pass2").val()) {
         errorMessage += "<p>Your passwords do not match </p>"
     }
-    alert(errorMessage);
+    $("#wrapper").append(errorMessage);
   });  
