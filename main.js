@@ -1,7 +1,6 @@
 var clickedOn = 1;
 var wrapper = document.getElementById("wrapper");
-var btn = document.getElementById("btn")
-btn.addEventListener("click", function () {
+$("#btn").click(function () {
     var ourRequest = new XMLHttpRequest();
     ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-' + clickedOn + '.json')
 
@@ -15,7 +14,7 @@ btn.addEventListener("click", function () {
     if (clickedOn > 3) {
         btn.classList.add("hidden")
     }
-})
+});
 
 function renderHtml(data) {
     var htmlString = "";
@@ -41,5 +40,5 @@ function renderHtml(data) {
         htmlString += '.</p>';
 
     }
-    wrapper.insertAdjacentHTML('beforeend', htmlString);
+    $("#wrapper").append(htmlString);
 }
