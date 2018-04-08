@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>JSON and AJAX</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
     <script src="main.js" defer></script>
 
 </head>
+
 <body>
-    <div id="header">
-        <div id="logo">
-            CodePlayer
-        </div>
-        <div id="btns">
-            <div class="toggleBtns active" id="html">HTML</div>
-            <div class="toggleBtns" id="css">CSS</div>
-            <div class="toggleBtns" id="javascript">JavaScript</div>
-            <div class="toggleBtns active" id="output">OUTPUT</div>
-        </div>
+    <header>
+        <h1>JSON and AJAX</h1>
+        <button id="btn">Fetch Info for 3 New Animals</button>
+    </header>
+    <div id="wrapper">
+
     </div>
-    <div id="bodyContainer">
-        <textarea id="htmlPanel" class="panel">Hello World!</textarea>
-        <textarea id="cssPanel" class="panel hidden">p { color: green; }</textarea>
-        <textarea id="javascriptPanel" class="panel hidden">alert("Hi there!);</textarea>
-        <iframe id="outputPanel" class="panel"></iframe>
-    </div>  
 </body>
+
 </html>

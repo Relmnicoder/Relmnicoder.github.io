@@ -1,20 +1,45 @@
-$(".toggleBtns").hover(function () {
-    $(this).addClass("highlightedBtn");
-}, function () {
-    $(this).removeClass("highlightedBtn");
-  });   
-$(".toggleBtns").click(function() {
-    $(this).toggleClass("active");
-    $(this).removeClass("highlightedBtn");
-    var panelId = $(this).attr("id") + "Panel";
-    $("#" + panelId).toggleClass("hidden");
-    var numberOfActivePanels = 4 - $('.hidden').length;
-    $(".panel").width(($(window).width() / numberOfActivePanels) - 10);
-});
-$(".panel").height($(window).height() - $("#header").height());
-$(".panel").width(($(window).width() / 2) - 10);
-$("iframe").contents().find("html").html($("#htmlPanel").val());
+var clickedOn = 1;
+var wrapper = document.getElementById("wrapper");
+var btn = document.getElementById("btn")
+btn.addEventListener("click", function () {
+    var ourRequest = new XMLHttpRequest();
+    ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-' + clickedOn + '.json')
 
-$("textarea").on('change keyup pase', function(){
-    $("iframe").contents().find("html").html($("#htmlPanel").val());
-});
+    ourRequest.onload = function () {
+        var ourData = JSON.parse(ourRequest.responseText);
+        renderHtml(ourData);
+    };
+
+    ourRequest.send();
+    clickedOn++;
+    if (clickedOn > 3) {
+        btn.classList.add("hidden")
+    }
+})
+
+function renderHtml(data) {
+    var htmlString = "";
+    for (i = 0; i < data.length; i++) {
+        htmlString += "<p>" + data[i].name + " is a " + data[i].species + " that likes to eat ";
+        for (ii = 0; ii < data[i].foods.likes.length; ii++) {
+            if (ii == 0) {
+                htmlString += data[i].foods.likes[ii];
+            } else {
+                htmlString += " and " + data[i].foods.likes[ii];
+            }
+        }
+
+        htmlString += " and dislikes "
+
+        for (ii = 0; ii < data[i].foods.dislikes.length; ii++) {
+            if (ii == 0) {
+                htmlString += data[i].foods.dislikes[ii];
+            } else {
+                htmlString += " and " + data[i].foods.dislikes[ii];
+            }
+        }
+        htmlString += '.</p>';
+
+    }
+    wrapper.insertAdjacentHTML('beforeend', htmlString);
+}
