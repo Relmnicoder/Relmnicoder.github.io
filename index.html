@@ -7,18 +7,34 @@
     <title>JSON and AJAX</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="main.js" defer></script>
 
 </head>
 
 <body>
-    <header>
-        <h1>JSON and AJAX</h1>
-        <button id="btn">Fetch Info for 3 New Animals</button>
-    </header>
     <div id="wrapper">
-
+        <div class="form-element">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="eg. yourname@gmail.com">
+        </div>
+        <div class="form-element">
+            <label for="tel">Telephone</label>
+            <input type="text" name="tel" id="tel" placeholder="eg. 0123456789">
+        </div>
+        <div class="form-element">
+            <label for="pass">Password</label>
+            <input type="password" name="pass" id="pass">
+        </div>
+        <div class="form-element">
+            <label for="pass">Confirm Password</label>
+            <input type="password" name="pass" id="pass2">
+        </div>
+        <div class="form-element">
+            <input type="submit" id="submit" value="Sign up!">
+            <button type="submit" id="btn">what</button>
+        </div>
+        
     </div>
 </body>
 
