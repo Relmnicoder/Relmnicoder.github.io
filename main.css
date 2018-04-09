@@ -1,34 +1,18 @@
-.hidden {
-    display: none;
 body{
-    font-family: Helvetica, sans-serif;
-    font-size: 150%;
+    background-image: url("smap-weather.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-input{
-    height: 40px;
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 3%;
-    border: 1px solid #333333;
-    width: 400px;
+#mainHead {
+    color: white;
+    text-shadow: rgb(125, 235, 35);
 }
-
-.form-element{
-    margin-top: 5px;
-}
-#wrapper{
-    width: 800px;
-    margin: 0 auto;
-}
-#submit{
-    padding: 0;
-    margin: 0;
-    width: 100px;
-}
-label{
-    font-size: 150%;
+#containWeather {
     position: relative;
-    top:15px;
-    width:350px;
-    float: left;
+    top: 100px;
+    height: 400px;
+    width: 800px;
+    background: transparent;
+    line-height: 400px;
+    text-align: center;
 }

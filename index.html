@@ -4,38 +4,29 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>JSON and AJAX</title>
+    <title>Weather</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
     <script src="main.js" defer></script>
 
 </head>
 
 <body>
-    <div id="wrapper">
-        <div class="form-element">
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" placeholder="eg. yourname@gmail.com">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <h1 id="mainHead">Weather search</h1>
         </div>
-        <div class="form-element">
-            <label for="tel">Telephone</label>
-            <input type="text" name="tel" id="tel" placeholder="eg. 0123456789">
-        </div>
-        <div class="form-element">
-            <label for="pass">Password</label>
-            <input type="password" name="pass" id="pass">
-        </div>
-        <div class="form-element">
-            <label for="pass">Confirm Password</label>
-            <input type="password" name="pass" id="pass2">
-        </div>
-        <div class="form-element">
-            <input type="submit" id="submit" value="Sign up!">
-            <button type="submit" id="btn">what</button>
-        </div>
+    </nav>
+    <div class="form-group">
+        <input type="text" class="form-control" id="usr" placeholder="bsp. stadt">
         
+        <button type="button" class="btn btn-default" id="btnSearch">Suchen</button>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
