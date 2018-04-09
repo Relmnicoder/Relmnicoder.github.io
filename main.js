@@ -7,6 +7,9 @@ $(document).ready(function () {
         promised.done(function (data) {
             console.log(data)
         })
+        promised.fail(function (data) {
+            alert("Problem with connecting to API")
+          })
     })
 });
 function promiseAjax() {
