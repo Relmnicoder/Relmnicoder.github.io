@@ -7,4 +7,4 @@ $("#btnSearch").click(function () {
             console.log(data)
           }
     })
-  })
+  });
