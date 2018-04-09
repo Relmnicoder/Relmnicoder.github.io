@@ -1,20 +1,10 @@
-$(".toggleBtns").hover(function () {
-    $(this).addClass("highlightedBtn");
-}, function () {
-    $(this).removeClass("highlightedBtn");
-  });   
-$(".toggleBtns").click(function() {
-    $(this).toggleClass("active");
-    $(this).removeClass("highlightedBtn");
-    var panelId = $(this).attr("id") + "Panel";
-    $("#" + panelId).toggleClass("hidden");
-    var numberOfActivePanels = 4 - $('.hidden').length;
-    $(".panel").width(($(window).width() / numberOfActivePanels) - 10);
-});
-$(".panel").height($(window).height() - $("#header").height());
-$(".panel").width(($(window).width() / 2) - 10);
-$("iframe").contents().find("html").html($("#htmlPanel").val());
-
-$("textarea").on('change keyup pase', function(){
-    $("iframe").contents().find("html").html($("#htmlPanel").val());
-});
+$("#btnSearch").click(function () {
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "http://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b34df3818e00c38fd96d86faf15835d4",
+        success: function (data) {
+            console.log(data)
+          }
+    })
+  })
