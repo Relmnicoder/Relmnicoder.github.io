@@ -1,18 +1,40 @@
 body{
-    background-image: url("smap-weather.png");
+    background-image: url("wetter bild.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
-#mainHead {
-    color: white;
-    text-shadow: rgb(125, 235, 35);
+
+.getsWarmer{
+    background-color: crimson
 }
-#containWeather {
-    position: relative;
-    top: 100px;
-    height: 400px;
-    width: 800px;
-    background: transparent;
-    line-height: 400px;
+.getsColder {
+    background-color: lightskyblue
+}
+#jumboNewcolor{
+    background-color: rgb(15, 35, 102, 0.4)
+}
+#city{
+    color: #fff;
+    text-shadow: 2px 2px #000;
+}
+.container{
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    font-size: 1.4em;
+}
+#btnSearch{
+    float: left;
+}
+#header {
+    color: skyblue;
+    text-shadow: 2px 2px #333;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+#rndText{
     text-align: center;
+    font-size: 2em;
+    margin: 0 auto;
+}
+.clearFloats{
+    clear: both;
 }
