@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#btnSearch").click(function () {
-       
+
         var url = $("#textInput").val();
         todayWeatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + url + "&appid=ee595a2e51b9aa75efcfd4297fb55b8c";
         forecastUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + url + "&appid=ee595a2e51b9aa75efcfd4297fb55b8c";
@@ -51,20 +51,23 @@ $(document).ready(function () {
 
                 for (i = 0; i < tage.length; i++) {
                     if (aktTempRound < tage[i]) {
-                        $("#row"+(i + 1)).removeClass("getsColder");
-                        $("#row"+(i + 1)).addClass("getsWarmer");
+                        $("#row" + (i + 1)).removeClass("getsColder");
+                        $("#row" + (i + 1)).addClass("getsWarmer");
                     }
                     else if (aktTempRound > tage[i]) {
-                        $("#row"+(i + 1)).removeClass("getsWarmer");
-                        $("#row"+(i + 1)).addClass("getsColder");
+                        $("#row" + (i + 1)).removeClass("getsWarmer");
+                        $("#row" + (i + 1)).addClass("getsColder");
                     }
                     else {
-                        $("#row"+(i + 1)).removeClass("getsWarmer");
-                        $("#row"+(i + 1)).removeClass("getsColder");
+                        $("#row" + (i + 1)).removeClass("getsWarmer");
+                        $("#row" + (i + 1)).removeClass("getsColder");
                     }
                 }
             })
+            .fail(function () {
+                alert("Unexpected error. Please try again later.");
+            })
+
+            })
 
     })
-
-})
